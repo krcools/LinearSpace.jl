@@ -1,7 +1,8 @@
 module LinearSpace
 
-macro linearspace(T,F)
+macro linearspace(T)
 
+    F = :(Any)
     LC = Symbol(T, :(_LC))
     TI = Symbol(T, :(_TI))
     xp = quote
