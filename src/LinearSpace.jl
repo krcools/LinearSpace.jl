@@ -12,7 +12,8 @@ macro linearspace(T)
         end
 
         import Base: convert, promote_rule, +, *
-        convert(::Type{$LC}, u::$T) = $LC(ones($F,1),[u])
+        #convert(::Type{$LC}, u::$T) = $LC(ones($F,1),[u])
+        convert(::Type{$LC}, u::$T) = $LC($F[1],[u])
         promote_rule(::Type{$T}, ::Type{$LC}) = $LC
         Base.:+(x::Union{$LC,$T}, y::Union{$LC,$T}) = Base.:+(promote(x,y)...)
         Base.:+(x::$LC, y::$LC) = $LC([x.a; y.a], [x.v; y.v])
