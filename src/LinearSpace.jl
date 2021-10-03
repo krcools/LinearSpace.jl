@@ -24,10 +24,11 @@ macro linearspace(T)
             lc::$LC
         end
 
-        Base.start(ti::$TI) = 1
-        Base.next(ti::$TI, st) = ((ti.lc.a[st],ti.lc.v[st]),st+1)
-        Base.done(ti::$TI,st) = (length(ti.lc.a) < st)
+        start(ti::$TI) = 1
+        next(ti::$TI, st) = ((ti.lc.a[st],ti.lc.v[st]),st+1)
+        done(ti::$TI,st) = (length(ti.lc.a) < st)
         Base.length(ti::$TI) = length(ti.lc.a)
+        Base.iterate(ti::$TI, st=start(ti)) = done(ti, st) ? nothing : next(ti, st) 
 
         terms(lc::$LC) = ($TI)(lc)
         terms(x::$T) = ($TI)(convert($LC,x))

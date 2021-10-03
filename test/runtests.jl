@@ -1,10 +1,11 @@
 using LinearSpace
-using Base.Test
+using Test
 
 struct MT i::Int end
 #scalartype(mt::MT) = Float64
 
 @linearspace MT #Float64
+
 x, y = MT(2), MT(3)
 
 z = x + 3y

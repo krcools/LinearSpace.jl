@@ -1,0 +1,7 @@
+name = "LinearSpace"
+uuid = "d47f75b0-78d4-4013-98d7-3145e378a370"
+authors = ["Kristof Cools <krcools@gmail.com>"]
+version = "0.1.0"
+
+[compat]
+julia = "^1"
